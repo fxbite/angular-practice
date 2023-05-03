@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="search">
+        <div class="p-inputgroup">
+            <input type="text" pInputText placeholder="Keyword" />
+            <button type="button" pButton label="Search"></button>
+        </div>
+    </div>
+    <div class="filter">
+        <div class="order">
+            <p-dropdown [options]="order" [(ngModel)]="selectedOrder" placeholder="Order" optionLabel="name"></p-dropdown>
+        </div>
+        <div class="from-time">
+            <p-calendar [(ngModel)]="date" placeholder="From" [showTime]="true" [showSeconds]="true" [showIcon]="true"></p-calendar>
+        </div>
+        <div class="to-time">
+            <p-calendar [(ngModel)]="date" placeholder="To" [showTime]="true" [showSeconds]="true" [showIcon]="true"></p-calendar>
+        </div>
+    </div>
+    <div class="result-video">
+        <app-video *ngIf="dataResult; else defaultResult" [data]="dataResult.items"></app-video>
+        <ng-template #defaultResult>
+            <h2 class="text-center">No Data</h2>
+        </ng-template>
+    </div>
+    <div class="pagination">
+        <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="120" [rowsPerPageOptions]="[10, 20, 30]"></p-paginator>
+    </div>
+</div>
+
+<div class="setting">
+    <fa-icon (click)="sidebarVisible = true" [icon]="settingIcon"></fa-icon>
+</div>
+
+<p-sidebar [(visible)]="sidebarVisible" position="right">
+    <div class="input-group">
+        <div class="item">
+            <input type="text" placeholder="Search Debounce" pInputText [(ngModel)]="debounceValue" />
+        </div>
+        <div class="item">
+            <input type="text" placeholder="API Key" pInputText [(ngModel)]="apiKeyValue" />
+        </div>
+    </div>
+</p-sidebar>
+

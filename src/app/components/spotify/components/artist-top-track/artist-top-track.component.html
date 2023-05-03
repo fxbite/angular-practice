@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row">
+        <div *ngFor="let item of data" class="col-12 col-sm-12 col-md-6 col-lg-4 text-center mt-5">
+            <p-card [style]="{ width: '300px' }">
+                <div class="card-header">
+                    <img [src]="item.image" alt="Artist" height="250px" width="100%">
+                </div>
+                <div class="card-body">
+                    <h3>{{item.name}}</h3>
+                    <div class="group-tag">
+                        <div class="tag-container">
+                            <span class="tag">
+                                <fa-icon [icon]="typeIcon"></fa-icon>
+                                {{item.type}}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="top-track">
+                        <div class="tag-container">
+                            <a *ngIf="item.preview_url; else elseBlock" [href]="item.preview_url" target="_blank" rel="noopener noreferrer">
+                                <span class="tag">
+                                    <fa-icon [icon]="playIcon"></fa-icon>
+                                    Try Audio
+                                </span>
+                            </a>
+                            <ng-template #elseBlock>
+                                <span class="tag-disabled">
+                                    Audio Unavailable
+                                </span>
+                            </ng-template>
+                        </div>
+                    </div>
+                    <div class="group-date text-center">
+                        <span class="date-style">
+                            Release Date:
+                        </span>
+                        <span>
+                            {{item.release_date | date: 'dd-MM-yyyy' }}
+                        </span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a [href]="item.external_url" target="_blank" rel="noopener noreferrer">
+                        <img src="/assets/spotify.png" alt="Listen on Spotify" width="100%">
+                    </a>
+                </div>
+            </p-card>
+        </div>
+    </div>
+</div>

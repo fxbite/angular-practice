@@ -1,0 +1,40 @@
+.container {
+
+    .list-to-do {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        .label, .completed {
+            margin: 10px 0;
+            padding: 10px 15px;
+            width: 300px;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: row;
+            .label-name {
+              width: 80%;
+              display: flex;
+              justify-content: flex-start;
+              cursor: pointer;
+            }
+            .close {
+              width: 20%;
+              display: flex;
+              justify-content: flex-end;
+              cursor: pointer;
+            }
+        }
+          
+        .label {
+            background-color: bisque;
+            border: 2px solid #fad5a8;
+        }
+
+        .completed {
+            background-color: rgb(151, 249, 216);
+            border: 2px solid #63f8c6;
+        }
+    }
+}
+

@@ -1,0 +1,28 @@
+<div class="container">
+    <h2>Contact Us</h2>
+    <div class="line"></div>
+    <form [formGroup]="contactForm" (ngSubmit)="submit()">
+        <div class="field">
+            <label htmlFor="name">Name</label>
+            <input type="text" pInputText placeholder="Your name"/>
+        </div>
+        <div class="field">
+            <label htmlFor="email">Your E-mail</label>
+            <input class="input-group" type="email" pInputText placeholder="Your email"/>
+            <button class="add-button" pButton label="Add"></button>
+        </div>
+        <div class="field">
+            <label htmlFor="phone">Your phone</label>
+            <input class="input-group" type="number" pInputText placeholder="Your phone"/>
+            <button class="add-button" pButton label="Add"></button>
+        </div>
+        <div class="field center">
+            <label htmlFor="message">Your message</label>
+            <textarea rows="5" cols="30" placeholder="Please enter your message here..." pInputTextarea ></textarea>
+        </div>
+        <div class="group-button">
+            <button pButton label="Submit"></button>
+        </div>
+    </form>
+</div>
+

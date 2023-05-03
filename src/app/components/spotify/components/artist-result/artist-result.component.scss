@@ -1,0 +1,84 @@
+:host {
+    ::ng-deep .p-card-content {
+        padding: unset;
+    }
+
+    ::ng-deep p-card {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.container {
+    padding: 20px;
+    background-color: bisque;
+
+    img {
+        border-radius: 5px;
+    }
+
+    h3 {
+        margin: 5px;
+    }
+
+    .group-tag {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+
+        .tag-container {
+            padding: 8px 5px;
+    
+            .tag {
+                border-radius: 16px;
+                padding: 5px 12px;
+                background-color: #dee2e6;
+            }
+        }
+    }
+
+    .rating-container {
+        margin: 8px 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .follower-container {
+        display: flex;
+        justify-content: center;
+
+        .follower-number {
+            color: #fea435;
+            font-weight: bold;
+            margin: 0 5px;
+        }
+    
+        .follower-style {
+            font-weight: bold;
+        }
+    }
+
+    .card-footer {
+        margin-top: 8px;
+    }
+}
+
+.tag-container {
+    padding: 8px 5px;
+
+    .tag {
+        border-radius: 16px;
+        padding: 5px 12px;
+        background-color: #f4c791;
+        cursor: pointer;
+        font-weight: 500;
+    }
+
+    .tag:hover {
+        background-color: #efb56e;
+    }
+}
+
+
+
+

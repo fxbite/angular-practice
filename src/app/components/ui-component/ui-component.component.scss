@@ -1,0 +1,48 @@
+.container {
+    padding: 50px 0;
+
+    .search {
+        padding: 20px;
+    }
+
+    .filter {
+        padding: 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        .order, .from-time, .to-time {
+            padding: 0 20px;
+        }
+    }
+
+    .result-video {
+        background-color: #d3d3d39d;
+    }
+    
+    .pagination {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+fa-icon {
+    font-size: 30px;
+    cursor: pointer;
+    color: #565b60;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+
+    &:hover {
+        color: #545a62de;
+    }
+}
+
+.input-group {
+
+    .item {
+        margin: 10px 0;
+    }
+}

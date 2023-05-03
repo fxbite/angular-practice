@@ -1,0 +1,28 @@
+<div class="container text-center mt-5">
+    <h1>To-Do List</h1>
+    <p>Enter text into the input field to add items to your list.</p>
+    <p>Click the "X" to remove the item from your list.</p>
+    <p>Click the item to mark it as complete.</p>
+
+    <div class="group-action mt-5">
+        <input type="text" pInputText/>
+        <div class="add"></div>
+
+        <div class="list-to-do mt-5">
+            <div class="label">
+                <div class="label-name">Todo 1</div>
+                <div class="close">
+                    <fa-icon [icon]="closeIcon"></fa-icon>
+                </div>
+            </div>
+
+            <div class="label completed">
+                <div class="label-name">Todo 1</div>
+                <div class="close">
+                    <fa-icon [icon]="closeIcon"></fa-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

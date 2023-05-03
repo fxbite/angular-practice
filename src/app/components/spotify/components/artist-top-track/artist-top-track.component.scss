@@ -1,0 +1,88 @@
+:host {
+    ::ng-deep .p-card-content {
+        padding: unset;
+    }
+
+    ::ng-deep p-card {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.container {
+    padding: 20px;
+    background-color: #9ed6ad87;
+
+    img {
+        border-radius: 5px;
+    }
+
+    h3 {
+        margin: 5px;
+    }
+
+    .group-tag {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        .tag-container {
+            padding: 8px 5px;
+    
+            .tag {
+                border-radius: 16px;
+                padding: 5px 12px;
+                background-color: #dee2e6;
+            }
+        }
+    }
+
+    .group-date {
+        margin: 5px 0;
+        background-color: orange;
+        font-weight: bold;
+        color: #ffffff;
+        padding: 10px 15px;
+        border-radius: 16px;
+    }
+
+    .card-footer {
+        margin-top: 8px;
+        display: flex;
+        justify-content: center;
+
+        a {
+            text-decoration: none;
+            width: 100%;
+            
+        }
+    }
+}
+
+.tag-container {
+    padding: 8px 5px;
+    
+    a {
+        text-decoration: none;
+        color: rgb(46, 44, 44);
+    }
+
+    .tag {
+        border-radius: 16px;
+        padding: 5px 12px;
+        background-color: #f4c791;
+        cursor: pointer;
+        font-weight: 500;
+    }
+
+    .tag:hover {
+        background-color: #efb56e;
+    }
+}
+.tag-disabled {
+    border-radius: 16px;
+    padding: 5px 12px;
+    background-color: #f4c791;
+    font-weight: 500;
+}
+

@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row">
+        <div *ngFor="let item of data" class="col-12 col-sm-12 col-md-6 col-lg-4 text-center mt-5">
+            <p-card [style]="{ width: '300px'}">
+                <div class="card-header">
+                    <img [src]="item.image" alt="Artist" height="250px" width="100%">
+                </div>
+                <div class="card-body">
+                    <h3>{{item.name}}</h3>
+                    <div class="group-tag">
+                        <div *ngFor="let tag of item.genres" class="tag-container">
+                            <span class="tag">
+                                <fa-icon [icon]="tagIcon"></fa-icon>
+                                {{tag}}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="rating-container">
+                        <p-rating [(ngModel)]="item.popularity" [readonly]="true" [cancel]="false"></p-rating>
+                    </div>
+                    <div class="follower-container">
+                        <img src="/assets/followers.png" alt="Followers" width="30px">
+                        <span class="follower-number">
+                            {{item.followers | numberCommas}}
+                        </span>
+                        <span class="follower-style">
+                            followers
+                        </span>
+                    </div>
+                    <div class="top-track">
+                        <div class="tag-container" (click)="sendArtistId(item.id)">
+                            <span class="tag">
+                                <fa-icon [icon]="trackIcon"></fa-icon>
+                                Top Track
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a [href]="item.external_url" target="_blank" rel="noopener noreferrer">
+                        <img src="/assets/spotify.png" alt="Listen on Spotify" width="100%">
+                    </a>
+                </div>
+            </p-card>
+        </div>
+    </div>   
+</div>

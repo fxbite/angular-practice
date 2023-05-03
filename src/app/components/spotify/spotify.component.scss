@@ -1,0 +1,27 @@
+.container {
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+
+    button {
+        margin-left: 10px;
+    }
+}
+
+.artist-show {
+    background-color: bisque;
+    color: #565555
+}
+
+.track-show {
+    background-color: #9ed6ad87;
+    color: #565555
+}
+
+h1 {
+    margin-top: 30px;
+}
+
+.list-items {
+    margin: 50px 0;
+}

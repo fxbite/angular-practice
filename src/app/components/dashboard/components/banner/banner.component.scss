@@ -1,0 +1,45 @@
+$purpleColor: #683bb7;
+$redColor: #ea1f63;
+$greenColor: #059689;
+$pinkColor: #c3195d;
+$fontColor: #ffffff;
+
+.wrap {
+    padding: 5px;
+}
+
+.display-group {
+    font-size: large;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    border-radius: 5px;
+    color: $fontColor;
+    padding: 20px;
+
+    p {
+        margin-top: 5px;
+        margin-bottom: unset;
+    }
+    
+    span {
+        margin-left: 8px;
+    }
+    
+}
+
+.purple {
+    background-color: $purpleColor;
+}
+
+.green {
+    background-color: $greenColor;
+}
+
+.red {
+    background-color: $redColor;
+}
+
+.pink {
+    background-color: $pinkColor;
+}

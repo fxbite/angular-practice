@@ -1,0 +1,38 @@
+.container {
+    padding: 10px 0;
+}
+
+.item-container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+img {
+    margin-right: 6px;
+}
+
+.group-countries {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    margin-top: 50px;
+    padding: 5px;
+
+    h1 {
+        margin-right: 10px;
+    }
+}
+
+.group-chart {
+    margin-top: 50px;
+}
+
+.line-chart {
+    height: 300px;
+}
+
+
+
+
+

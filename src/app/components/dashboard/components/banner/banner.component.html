@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col-12 col-md-6 col-lg-3 wrap">
+        <div class="display-group purple">
+            <div class="title">
+                <fa-icon [icon]="userIcon"></fa-icon>
+                <span>Confirmed</span>
+            </div>
+            <p *ngIf="data?.confirmed; else defaultConfirmed">{{data.confirmed}}</p> 
+            <ng-template #defaultConfirmed>
+                <p>0</p>
+            </ng-template>
+        </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-3 wrap">
+        <div class="display-group green">
+            <div class="title">
+                <fa-icon [icon]="plusIcon"></fa-icon>
+                <span>Recovered</span>
+            </div>
+            <p *ngIf=" data?.recovered; else defaultRecovered">{{data.recovered}}</p>
+            <ng-template #defaultRecovered>
+                <p>0</p>
+            </ng-template>
+        </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-3 wrap">
+        <div class="display-group red">
+            <div class="title">
+                <fa-icon [icon]="bedIcon"></fa-icon>
+                <span>Deaths</span>
+            </div>
+            <p *ngIf="data?.deaths; else defaultDeaths">{{data.deaths}}</p>
+            <ng-template #defaultDeaths>
+                <p>0</p>
+            </ng-template>
+        </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-3 wrap">
+        <div class="display-group pink">
+            <div class="title">
+                <fa-icon [icon]="warningIcon"></fa-icon>
+                <span>Fatality Rate</span>
+            </div>
+            <p *ngIf="data?.fatalityRate; else defaultFatalityRate">{{data.fatalityRate}} %</p>
+            <ng-template #defaultFatalityRate>
+                <p>0 %</p>
+            </ng-template>
+        </div>
+    </div>
+</div>

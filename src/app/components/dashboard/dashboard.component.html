@@ -1,0 +1,51 @@
+<div class="container">
+    <h1>World Wide</h1>
+    <app-banner [data]="worldCovid19Data"></app-banner>
+
+    <div class="group-countries">
+        <h1>Regional</h1>
+        <p-dropdown [options]="countriesCovid19Data" [(ngModel)]="selectedCountry" optionLabel="countryName" [filter]="true" filterBy="countryName" ngDefaultControl="" [showClear]="true" placeholder="Select a Country">
+            <ng-template pTemplate="selectedItem">
+                <div class="item-container" *ngIf="selectedCountry">
+                    <img src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png" [class]="'flag flag-' + selectedCountry.countryId.toLowerCase()" style="width: 18px"/>
+                    <div>{{ selectedCountry.countryName }}</div>
+                </div>
+            </ng-template>
+            <ng-template let-country pTemplate="item">
+                <div class="item-container">
+                    <img src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png" [class]="'flag flag-' + country.countryId.toLowerCase()" style="width: 18px"/>
+                    <div>{{ country.countryName }}</div>
+                </div>
+            </ng-template>
+        </p-dropdown>
+    </div>
+    <app-banner [data]="selectedCountry"></app-banner>
+
+    <div class="row group-chart">
+        <div class="col-12 col-md-12 col-lg-6">
+
+        </div>
+        <div class="col-12 col-md-12 col-lg-6">
+            <div class="line-chart">
+                <ngx-charts-line-chart
+                    [scheme]="chartConfiguration.colorScheme"
+                    [legend]="chartConfiguration.legend"
+                    [showXAxisLabel]="chartConfiguration.showXAxisLabel"
+                    [showYAxisLabel]="chartConfiguration.showYAxisLabel"
+                    [xAxis]="chartConfiguration.xAxis"
+                    [yAxis]="chartConfiguration.yAxis"
+                    [xAxisLabel]="chartConfiguration.xAxisLabel"
+                    [yAxisLabel]="chartConfiguration.yAxisLabel"
+                    [timeline]="chartConfiguration.timeline"
+                    [results]="chartData"
+                    (select)="onSelect($event)"
+                    (activate)="onActivate($event)"
+                    (deactivate)="onDeactivate($event)"
+                    [showRefLabels]="chartConfiguration.showRefLabels"
+                    [autoScale]="chartConfiguration.responsive"
+                >
+                </ngx-charts-line-chart>
+            </div>
+        </div>
+    </div>
+</div>

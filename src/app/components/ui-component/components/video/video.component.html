@@ -1,0 +1,37 @@
+<div class="row">
+    <div *ngFor="let item of data" (click)="showDialog(item)" id="card" class="col-12 col-md-6 col-lg-4">
+        <p-card [style]="{ width: '300px'}">
+            <div class="card-header">
+                <img [src]="item.thumbnail" alt="Artist" width="100%">
+            </div>
+            <div class="card-body text-center">
+               <h3 class="mt-3">{{item.title}}</h3>
+            </div>
+        </p-card>
+    </div>
+</div>
+
+<p-dialog [(visible)]="visible" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
+    <div *ngIf="selectedItem" class="container">
+        <iframe 
+            class="video"
+            [src]="selectedItem.embedURL | safe" 
+            title="YouTube video player" frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+        </iframe>
+        <div class="detail mt-2">
+            <h2>{{selectedItem.title}}</h2>
+            <div class="channel">
+                <img src="/assets/youtube-logo.png" width="80" height="80" alt="Youtube">
+                <a [href]="selectedItem.channelURL" pTooltip="{{selectedItem.channelTitle}}" tooltipPosition="top" target="_blank" rel="noopener noreferrer">
+                    <h3>{{selectedItem.channelTitle}}</h3> 
+                </a>   
+            </div>
+            <div class="description">
+                <p class="published">{{selectedItem.published}}</p>
+                <p class="content">{{selectedItem.description}}</p>
+            </div>
+        </div>
+    </div>
+</p-dialog>

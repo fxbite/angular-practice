@@ -1,0 +1,21 @@
+<h1 class="text-center">FA STORE MUSIC</h1>
+<div class="container">
+    <input type="text" pInputText [(ngModel)]="search" placeholder="Artist..."/>
+    <button pButton pRipple label="Search" class="p-button-success" (click)="getArtist(search)"></button>
+</div>
+<div class="list-items">
+    <app-artist-result *ngIf="artistData; else defaultArtistBlock" [data]="artistData" (event)="receiveArtistId($event)"></app-artist-result>
+    <ng-template #defaultArtistBlock>
+        <div class="container artist-show">
+            <h1>No Data</h1>
+        </div>
+    </ng-template>
+</div>
+<div class="list-items">
+    <app-artist-top-track *ngIf="trackData; else defaultTrackBlock" [data]="trackData"></app-artist-top-track>
+    <ng-template #defaultTrackBlock>
+        <div class="container track-show">
+            <h1>No Artist Data Provide</h1>
+        </div>
+    </ng-template>
+</div>

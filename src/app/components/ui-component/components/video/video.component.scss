@@ -1,0 +1,52 @@
+$defaultColor: #f2f2f2;
+
+:host {
+    ::ng-deep .p-card-content {
+        padding: unset;
+    }
+}
+
+#card {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+
+    .video {
+        aspect-ratio: 16 / 9;
+        width: 100%;
+    }
+    .detail {
+
+        .channel {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+
+            a {
+                text-decoration: none;
+                color: orange;
+            }
+        }
+
+        .description {
+            padding: 20px;
+            background-color: $defaultColor;
+            border-radius: 5px;
+
+            .published {
+                margin-bottom: 10px;
+                font-weight: 500;
+                font-size: larger;
+            }
+
+            .content {
+                font-weight: 400;
+                font-size: large;
+            }
+        }
+    }
+}
